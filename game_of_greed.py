@@ -4,22 +4,28 @@ import random
 diceHand = [None] * 6
 diceSaved = [None]
 
-for i,dice in enumerate(diceHand):
-  diceHand[i] = random.randint(1,6)
+def rollNewDice():
+  for (i,v) in enumerate(diceHand):
+    diceHand[i] = random.randint(1,6)
+  print(diceHand)
 
-print(diceHand)
+
 # Application should allow user to set aside dice each roll
+def saveDice():
   # Capture user input and split into an array 
-
-diceSaved = input("Please enter which dice values you would like to keep:").split()
-
+  diceSaved = input("Please enter which dice values you would like to keep:").split()
   # Remove selected values from diceHand
-for die in diceSaved:
-  index = diceHand.index( int(die) )
-  diceHand.pop( index )
+  for die in diceSaved:
+    index = diceHand.index( int(die) )
+    diceHand.pop( index )
+  print(diceHand)
 
-print(diceHand)
-# print(diceSaved)
+
+#Game Logic
+rollNewDice()
+saveDice()
+
+
   # Create a function that takes values out of array "Hand" 
   # and adds them to a Aside array
 
