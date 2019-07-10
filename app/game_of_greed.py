@@ -25,19 +25,24 @@ def rollNewDice():
 
 def saveDice():
   global gameScore
+  
   response = input("Would you like to save any die? (y/n)")
 
   if response == ('y' or 'Y' or 'yes' or 'YES'):
     diceSaved = input("Please enter which dice values you would like to keep:").split()
-    print(diceSaved)
+    newPoints = countPoints(diceSaved)
+    
+    #input dice saved into point calculation and add to global points
     for die in diceSaved:
       index = diceHand.index( int(die) )
       diceHand.pop( index )
-      gameScore += int( input("How many points is this worth?") )
-
+      # gameScore += int( input("How many points is this worth?") )
+    gameScore += newPoints
+    print(f'You earned {newPoints} points for that round!' )
+    
   elif response == ('n' or 'N' or 'no' or 'NO'):
   # Capture user input and split into an array 
-    print('You decide to roll again')  
+    print('You decided to roll again')  
   # Remove selected values from diceHand
   else:
     response = input("Please enter a valid reponse (y/n)")
@@ -57,14 +62,6 @@ def endgame():
     #a If yes, prompt user which die to save
     #  Prompt user for score associated for which die to save
   #3. Roll again
-
-if __name__ == "__main__":
-  while (gameRound < 4):
-    print('Round ' + str(gameRound) )  
-    rollNewDice()
-    saveDice()
-    gameRound += 1
-
 
 def createDiceTallyDictionary(list):
   newDist = {
@@ -183,3 +180,13 @@ def countPoints(list):
     pointsEarned = 2000
 
   return pointsEarned
+
+
+
+if __name__ == "__main__":
+  while (gameRound < 4):
+    print('Round ' + str(gameRound) )  
+    rollNewDice()
+    saveDice()
+    gameRound += 1
+  endgame()
