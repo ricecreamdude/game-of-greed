@@ -91,6 +91,12 @@ def countPoints(list):
     5: 0,
     6: 0
   }
+
+  pairCounter = 0
+  tripleCounter = 0
+
+  straight = {1:1, 2:1, 3:1, 4:1, 5:1, 6:1}
+
   for x in list:
     diceTally[ int(x) ] += 1
 
@@ -98,6 +104,10 @@ def countPoints(list):
   #calculate points for single values
   for value,count in diceTally.items():
     # ONES
+    if count == 2:
+      pairCounter += 1
+    if count == 3:
+      tripleCounter += 1
     if value == 1:
       if (count == 1 or count == 2):
         pointsEarned += 100*count
@@ -119,6 +129,7 @@ def countPoints(list):
         pointsEarned = 800
       if count == 6:
         pointsEarned = 1200
+
     if value == 3:
       if count == 3:
         pointsEarned = 300
@@ -159,31 +170,16 @@ def countPoints(list):
       if count == 5:
         pointsEarned = 2400
       if count == 6:
-        pointsEarned = 3600      
-    # test_ones
-    # rolls with various number of 1s should return correct score
-    # test_twos
-    # rolls with various number of 2s should return correct score
-    # test_threes
-    # rolls with various number of 3s should return correct score
-    # test_fours
-    # rolls with various number of 4s should return correct score
-    # test_fives
-    # rolls with various number of 5s should return correct score
-    # test_sixes
-    # rolls with various number of 6s should return correct score
-    # test_straight
-    # 1,2,3,4,5,6 should return correct score
-    # test_three_pairs
-    # 3 pairs should return correct score
-    # test_leftover_ones
-    # 1s not used in set of 3 (or greater) should return correct score
-    # test_leftover_fives
-    # 5s not used in set of 3 (or greater) should return correct score
-    # test_two_trios
-    # 2 sets of 3 should return correct score
-    # test_roll
-    # doing a roll with x number of dice should return sequence of x length random integers between 1 and 6 inclusive
+        pointsEarned = 3600 
 
+  # check for special hands
+  if diceTally == straight:
+    pointsEarned = 1500 
+
+  if pairCounter == 3:
+    pointsEarned = 1000
+
+  if tripleCounter == 2:
+    pointsEarned = 2000
 
   return pointsEarned

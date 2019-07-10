@@ -67,13 +67,19 @@ def test_sixes():
   assert countPoints(['6']*6) == 3600
 
 # 1,2,3,4,5,6 should return correct score
-def test_straight():
-  assert countPoints(['1','2','3','4','5','6']) == 1500
+# def test_straight():
+#   assert countPoints(['1','2','3','4','5','6']) == 1500
 # test_straight
 
+def test_straight():
+  straight = ["1","2","3","4","5","6"]
+  assert countPoints(straight) == 1500
 # test_three_pairs
+def test_three_pairs():
+  assert countPoints(['1','1','2','2','3','3']) == 1000
 # 3 pairs should return correct score
-
+def test_two_trios():
+  assert countPoints(['1','1','1','2','2','2']) == 2000
 # test_two_trios
 # 2 sets of 3 should return correct score
 
