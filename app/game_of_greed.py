@@ -95,6 +95,7 @@ def countPoints(list):
     diceTally[ int(x) ] += 1
 
   #for value of dice(1-6), count of times rolled
+  #calculate points for single values
   for value,count in diceTally.items():
     # ONES
     if value == 1:
@@ -108,15 +109,35 @@ def countPoints(list):
         pointsEarned = 3000
       if count == 6:
         pointsEarned = 4000
-    
-    # if (value == 2 or value == 3 or value == 4 or value == 6):
-    #   if count == 1 or count == 2:
+  
+    if value == 2:
+      if count == 3:
+        pointsEarned = 200
+      if count == 4:
+        pointsEarned = 400
+      if count == 5:
+        pointsEarned = 800
+      if count == 6:
+        pointsEarned = 1200
+    if value == 3:
+      if count == 3:
+        pointsEarned = 300
+      if count == 4:
+        pointsEarned = 600
+      if count == 5:
+        pointsEarned = 1200
+      if count == 6:
+        pointsEarned = 1800
 
-    # if value == 2:
-    
-    # if value == 3:
-
-    # if value == 4:
+    if value == 4:
+      if count == 3:
+        pointsEarned = 400
+      if count == 4:
+        pointsEarned = 800
+      if count == 5:
+        pointsEarned = 1600
+      if count == 6:
+        pointsEarned = 2400
 
     if value == 5:
       if count == 1 or count == 2:
@@ -130,7 +151,15 @@ def countPoints(list):
       if count == 6:
         pointsEarned = 3000
 
-    # if value == 6:
+    if value == 6:
+      if count == 3:
+        pointsEarned = 600 
+      if count == 4:
+        pointsEarned = 1200
+      if count == 5:
+        pointsEarned = 2400
+      if count == 6:
+        pointsEarned = 3600      
     # test_ones
     # rolls with various number of 1s should return correct score
     # test_twos
