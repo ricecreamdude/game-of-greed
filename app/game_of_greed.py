@@ -58,14 +58,6 @@ def endgame():
     #  Prompt user for score associated for which die to save
   #3. Roll again
 
-if __name__ == "__main__":
-  while (gameRound < 4):
-    print('Round ' + str(gameRound) )  
-    rollNewDice()
-    saveDice()
-    gameRound += 1
-
-
 def createDiceTallyDictionary(list):
   newDist = {
     1: 0,
@@ -183,3 +175,10 @@ def countPoints(list):
     pointsEarned = 2000
 
   return pointsEarned
+
+if __name__ == "__main__":
+  while (gameRound < 4):
+    print('Round ' + str(gameRound) )  
+    rollNewDice()
+    saveDice()
+    gameRound += 1
