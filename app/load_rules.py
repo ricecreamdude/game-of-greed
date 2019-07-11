@@ -1,5 +1,3 @@
-
-
 def getCustomRules():
   contents = ''
   custom_rules = {}
@@ -14,6 +12,4 @@ def getCustomRules():
     data = rule.split(":")
     custom_rules[data[0]] = data[1]
 
-  print(custom_rules)
-
-getCustomRules()
+  return custom_rules

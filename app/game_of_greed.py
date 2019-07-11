@@ -1,6 +1,8 @@
 import random
+from load_rules import getCustomRules
 
 #dice variables
+custom_rules = getCustomRules()
 diceHand = [None] * 6
 diceSaved = [None]
 
@@ -35,7 +37,7 @@ def saveDice():
       diceHand.pop( index )
       gameScore += int( input("How many points is this worth?") )
 
-  elif response == ('n' or 'N' or 'no' or 'NO'):
+  if response == ('n' or 'N' or 'no' or 'NO'):
   # Capture user input and split into an array 
     print('You decide to roll again')  
   # Remove selected values from diceHand
