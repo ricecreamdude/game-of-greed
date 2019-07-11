@@ -186,19 +186,12 @@ def countPoints(list):
 
   return pointsEarned
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 0505c1f54e7bd23f2dc535d0e3d2526488da5187
 if __name__ == "__main__":
   while (gameRound < 4):
     print('Round ' + str(gameRound) )  
     rollNewDice()
     saveDice()
-<<<<<<< HEAD
-    gameRound += 1
-=======
     gameRound += 1
   endgame()
->>>>>>> 0505c1f54e7bd23f2dc535d0e3d2526488da5187
