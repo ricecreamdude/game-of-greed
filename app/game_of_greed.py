@@ -1,42 +1,8 @@
 import random
-
-class GameOfGreed:
-
-  def __init__(self):
-    self.gameScore = 1234
-    self.round = 1
-  #v Game Score
-  # gameScore = 0
-  #v Game Round
-
-  #Game Methods
-    #f play round
-    #f add to game score
-    #f end game
-
-
-  def endgame(self):
-    print(f'Thanks for playing. Your score: {self.gameScore}' )
-
-# class Hand:
-  
-  #saved die
-
-  #die in hand
-
-  #add to hand die
-
-
-# class Dice:
-  #Die Value
-
-  #Generate Die
-
-  #Current Hand
-
-  #Save Die
+from load_rules import getCustomRules
 
 #dice variables
+custom_rules = getCustomRules()
 diceHand = [None] * 6
 diceSaved = [None]
 
@@ -234,4 +200,38 @@ if __name__ == "__main__":
     gameRound += 1
   endgame()
 
+# class GameOfGreed:
 
+#   def __init__(self):
+#     self.gameScore = 1234
+#     self.round = 1
+  #v Game Score
+  # gameScore = 0
+  #v Game Round
+
+  #Game Methods
+    #f play round
+    #f add to game score
+    #f end game
+
+
+  # def endgame(self):
+  #   print(f'Thanks for playing. Your score: {self.gameScore}' )
+
+# class Hand:
+  
+  #saved die
+
+  #die in hand
+
+  #add to hand die
+
+
+# class Dice:
+  #Die Value
+
+  #Generate Die
+
+  #Current Hand
+
+  #Save Die
