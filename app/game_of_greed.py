@@ -6,6 +6,7 @@ custom_rules = getCustomRules()
 diceHand = [None] * 6
 diceSaved = [None]
 
+
 #game variables
 # Application should keep track of total score
 gameScore = 0
@@ -189,9 +190,48 @@ def countPoints(list):
 
 
 if __name__ == "__main__":
+  game = GameOfGreed()
+
+  game.endgame()
   while (gameRound < 4):
     print('Round ' + str(gameRound) )  
     rollNewDice()
     saveDice()
     gameRound += 1
   endgame()
+
+# class GameOfGreed:
+
+#   def __init__(self):
+#     self.gameScore = 1234
+#     self.round = 1
+  #v Game Score
+  # gameScore = 0
+  #v Game Round
+
+  #Game Methods
+    #f play round
+    #f add to game score
+    #f end game
+
+
+  # def endgame(self):
+  #   print(f'Thanks for playing. Your score: {self.gameScore}' )
+
+# class Hand:
+  
+  #saved die
+
+  #die in hand
+
+  #add to hand die
+
+
+# class Dice:
+  #Die Value
+
+  #Generate Die
+
+  #Current Hand
+
+  #Save Die
