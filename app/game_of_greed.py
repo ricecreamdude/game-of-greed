@@ -1,6 +1,8 @@
 import random
+from load_rules import getCustomRules
 
 #dice variables
+custom_rules = getCustomRules()
 diceHand = [None] * 6
 diceSaved = [None]
 
