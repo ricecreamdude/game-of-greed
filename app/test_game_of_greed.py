@@ -1,4 +1,5 @@
-from app.game_of_greed import countPoints
+from game_of_greed import countPoints
+# from app.load_rules import getCustomRules
 
 def test_init_countPoints():
   assert countPoints
@@ -73,13 +74,13 @@ def test_sixes():
 
 def test_straight():
   straight = ["1","2","3","4","5","6"]
-  assert countPoints(straight) == 1500
+  assert countPoints(straight) == 1111
 # test_three_pairs
 def test_three_pairs():
-  assert countPoints(['1','1','2','2','3','3']) == 1000
+  assert countPoints(['1','1','2','2','3','3']) == 2222
 # 3 pairs should return correct score
 def test_two_trios():
-  assert countPoints(['1','1','1','2','2','2']) == 2000
+  assert countPoints(['1','1','1','2','2','2']) == 3333
 # test_two_trios
 # 2 sets of 3 should return correct score
 

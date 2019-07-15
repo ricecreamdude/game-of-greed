@@ -6,7 +6,6 @@ custom_rules = getCustomRules()
 diceHand = [None] * 6
 diceSaved = [None]
 
-
 #game variables
 # Application should keep track of total score
 gameScore = 0
@@ -177,22 +176,19 @@ def countPoints(list):
 
   # check for special hands
   if diceTally == {1:1, 2:1, 3:1, 4:1, 5:1, 6:1}:
-    pointsEarned = 1500 
+    pointsEarned = int(custom_rules['STRAIGHT_SCORE']) or 1500 
 
   if pairCounter == 3:
-    pointsEarned = 1000
+    pointsEarned = int(custom_rules['THREE_DOUBLES_SCORE']) or 1000
 
   if tripleCounter == 2:
-    pointsEarned = 2000
+    pointsEarned = int(custom_rules['TWO_TRIPLES_SCORE']) or 2000
 
   return pointsEarned
 
 
 
 if __name__ == "__main__":
-  game = GameOfGreed()
-
-  game.endgame()
   while (gameRound < 4):
     print('Round ' + str(gameRound) )  
     rollNewDice()
@@ -235,3 +231,5 @@ if __name__ == "__main__":
   #Current Hand
 
   #Save Die
+
+  

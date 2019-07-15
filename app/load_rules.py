@@ -3,7 +3,7 @@ def getCustomRules():
   custom_rules = {}
 
   #split rules into an array
-  with open('house_rules.txt') as file:
+  with open('./app/house_rules.txt') as file:
     contents = file.read()
 
   contents = contents.split("\n")
